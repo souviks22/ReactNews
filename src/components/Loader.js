@@ -1,4 +1,4 @@
-import { View, ActivityIndicator, StatusBar, StyleSheet } from "react-native"
+import { View, ActivityIndicator, StyleSheet } from "react-native"
 
 const Loader = () => {
   return (<View style={styles.loader}>
@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
   loader: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: StatusBar.currentHeight
+    justifyContent: 'center'
   }
 })
 

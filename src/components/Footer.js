@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator, StyleSheet } from "react-native"
+import { View, Text, ActivityIndicator, StatusBar, StyleSheet } from "react-native"
 import { useSelector } from "react-redux"
 
 const Footer = () => {
@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 10
+    marginTop: 10,
+    marginBottom: StatusBar.currentHeight
   }
 })
 

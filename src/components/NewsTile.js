@@ -2,16 +2,17 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 
 const NewsTile = ({ item: newsItem }) => {
   const { title, summary, media, published_date } = newsItem
+  const [date, time] = published_date.split(' ')
   return (<View style={styles.container}>
     <Image
       defaultSource={require('../../assets/react-icon.png')}
-      source={{ uri: media ? media : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png' }}
+      source={{ uri: media || 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png' }}
       style={styles.image}
     />
     <View style={styles.textContainer}>
       <Text style={styles.title} numberOfLines={2}>{title}</Text>
       <Text style={styles.summary} numberOfLines={2}>{summary}</Text>
-      <Text style={styles.date}>{published_date}</Text>
+      <Text style={styles.date}>{date} at {time}</Text>
     </View>
   </View>)
 }
@@ -38,19 +39,22 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   title: {
-    fontWeight: 'bold',
-    marginBottom: 5
+    marginBottom: 5,
+    fontWeight: 'bold'
   },
   summary: {
     color: 'grey',
-    fontSize: 10
+    fontSize: 10,
+    fontWeight: 'bold'
   },
   date: {
+    color: '#2c2',
     fontSize: 10,
-    marginTop: 10
+    marginTop: 10,
+    fontWeight: 'bold'
   }
 });
 

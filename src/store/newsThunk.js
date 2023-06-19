@@ -6,7 +6,7 @@ const fetchNews = (page) => {
       dispatch(newsActions.request({ page }))
       const response = await fetch(`https://api.newscatcherapi.com/v2/latest_headlines?lang=en&page_size=20&page=${page}`, {
         headers: {
-          'x-api-key': 'xUI3ZLVSWgDA1T_cevBcBvoKknty-FFIKgcKEhY47Nk'
+          'x-api-key': 'I5L0g27wxzfUuLRFnB7MK_ZQRHQEWmsD_ywZ-8ogv2Y'
         }
       })
       const { articles } = await response.json()

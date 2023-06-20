@@ -9,8 +9,11 @@ const fetchNews = (page) => {
           'x-api-key': 'I5L0g27wxzfUuLRFnB7MK_ZQRHQEWmsD_ywZ-8ogv2Y'
         }
       })
-      const { articles } = await response.json()
-      if (articles.length) {
+      const { articles, message } = await response.json()
+      if (!articles) {
+        dispatch(newsActions.failure({ error: { message } }))
+      }
+      else if (articles.length) {
         dispatch(newsActions.success({ articles }))
       } else {
         dispatch(newsActions.endNews())
@@ -18,8 +21,8 @@ const fetchNews = (page) => {
     }
     try {
       fetchArticles()
-    } catch (err) {
-      dispatch(newsActions.failure({ err }))
+    } catch (error) {
+      dispatch(newsActions.failure({ error }))
     }
   }
 }

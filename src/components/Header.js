@@ -1,15 +1,24 @@
-import { Text, StyleSheet } from "react-native"
+import { Text, StyleSheet, View } from "react-native"
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Header = () => {
-  return (<Text style={styles.header}>React News</Text>)
+  return (<View style={styles.header}>
+    <FontAwesome5 name="react" size={30} color="black" />
+    <Text style={styles.headerText}>React News</Text>
+  </View>)
 }
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 25,
-    fontWeight: '700',
+    flexDirection: 'row',
+    alignItems: 'center',
     marginVertical: 15,
     marginHorizontal: 10
+  },
+  headerText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginHorizontal: 5
   }
 })
 

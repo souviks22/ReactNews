@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { SafeAreaView, FlatList, StatusBar, StyleSheet, View } from 'react-native'
+import { SafeAreaView, FlatList, StatusBar, StyleSheet } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import fetchNews from '../store/newsThunk'
 import Loader from '../components/Loader'
